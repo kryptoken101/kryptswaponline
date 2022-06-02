@@ -1,0 +1,24 @@
+.modalConductor {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 101011111111;
+}
+
+.modalDashboardConductor {
+  position: relative;
+  height: 100%;
+  margin-top: 20px;
+  border-radius: var(--main-component-border-radius);
+  box-shadow: var(--box-shadow);
+  background: var(--color-background-elements);
+}
+
+@media screen and (max-width: 480px) {
+  .modalDashboardConductor {
+    box-shadow: none;
+    background: #222528;
+  }
+}

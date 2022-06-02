@@ -1,0 +1,21 @@
+.debug {
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: 1px solid var(--color-notice);
+}
+
+.title {
+  margin: 1em 0 0;
+}
+
+.button {
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.information {
+  display: block;
+  font-size: 13px;
+  color: var(--color);
+}

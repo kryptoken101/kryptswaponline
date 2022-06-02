@@ -1,0 +1,50 @@
+.label {
+  font-size: 15px;
+  @include ff-semibold;
+  display: inline-block;
+  background-color: var(--color-background-elements);
+  padding: 2px 7px;
+  z-index: 1;
+  position: absolute;
+  top: -13px;
+  left: 10px;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.positionStatic {
+  position: static;
+}
+
+.inDropDown {
+  display: flex;
+  padding: 0 10px;
+  margin-left: -1px;
+  top: -13px;
+  padding-right: 25px;
+}
+
+@include media-tablet-landscape-and-lower {
+  .inRow {
+    margin-top: 30px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@include media-mobile {
+  .inRow {
+    &:first-child {
+      font-size: 12px;
+    }
+  }
+
+  .label {
+    font-size: 10px;
+    top: -11px;
+    left: 9px;
+    padding-right: 5px;
+  }
+}

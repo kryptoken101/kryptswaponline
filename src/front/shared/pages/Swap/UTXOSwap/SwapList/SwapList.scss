@@ -1,0 +1,183 @@
+.stepList,
+.stepItem,
+.stepNumber,
+.stepText {
+  color: var(--color);
+}
+
+.stepNumber {
+  border: 1px solid var(--color-border);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  min-width: 35px;
+}
+
+.cancelSwap {
+  position: relative;
+  font-size: 17px;
+  cursor: pointer;
+  color: var(--color-bad);
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  padding: 0 1.6em;
+  text-align: center;
+  display: inline-block;
+  text-decoration: underline;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.tooltip {
+  padding-left: 10px;
+}
+
+.stepList {
+  width: 100%;
+  max-width: 600px;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  font-size: 14px;
+  opacity: 0.3;
+}
+
+.stepText {
+  margin: 0;
+  margin-left: 0.7rem;
+  text-transform: uppercase;
+}
+
+.active {
+  color: var(--color);
+  opacity: 1;
+
+  .stepNumber {
+    background: var(--color-background-elements);
+    border: 1px solid var(--color-notice);
+    color: var(--color);
+  }
+}
+
+.checked {
+  .stepNumber {
+    background: var(--color-brand);
+    color: var(--color-background-elements);
+    border: 1px solid var(--color-brand);
+    min-width: 35px;
+  }
+  .stepText {
+    color: var(--color-brand);
+  }
+}
+
+.transactionInStep {
+  font-size: 20px;
+  margin-left: 10px;
+  position: relative;
+  a {
+    font-size: 14px;
+    display: block;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+    &:hover {
+      border-bottom: none;
+      color: var(--color-link);
+    }
+    .checkedIcon {
+      margin-left: 4px;
+    }
+  }
+  i {
+    font-size: 19px;
+    color: var(--color-link);
+    display: none;
+    margin-left: 4px;
+  }
+}
+
+.stepHeading {
+  font-size: 26px;
+  font-weight: 500;
+  flex-basis: 85%;
+  margin: auto;
+}
+
+.swapDepositWindow {
+  width: 100%;
+}
+
+@media all and (max-width: 1000px) {
+  .stepList {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@include media-tablet {
+  .stepList {
+    margin-left: 0;
+    order: 4;
+  }
+  .stepList.isMobile {
+    margin-left: 0px;
+    margin-bottom: 25px;
+    align-items: baseline;
+    margin-bottom: 5px;
+    margin-top: -20px;
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    order: 1;
+    justify-content: space-between;
+  }
+}
+
+@include media-mobile {
+  .stepList {
+    margin-left: 0;
+    order: 4;
+  }
+
+  .transactionInStep {
+    a {
+      margin-top: 0;
+    }
+  }
+
+  .stepList.isMobile {
+    width: 100%;
+    order: 1;
+    .cancelSwap {
+      font-size: 15px;
+      height: 30px;
+      line-height: 30px;
+      border-bottom: 1px solid;
+      position: absolute;
+      right: 0;
+      padding-bottom: 3px;
+      top: -5px;
+      text-decoration: none;
+      border-radius: 0;
+    }
+  }
+  .stepText {
+    font-size: 12px;
+  }
+  .stepHeading {
+    color: var(--color);
+    font-size: 18px;
+    flex-basis: 70%;
+  }
+}

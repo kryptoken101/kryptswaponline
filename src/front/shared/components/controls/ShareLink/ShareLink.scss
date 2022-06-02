@@ -1,0 +1,133 @@
+.HolderLinkShorter {
+  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  background: var(--color-background-elements);
+  cursor: pointer;
+  padding-bottom: 15px;
+  span:nth-child(1) {
+    display: block;
+    text-align: right;
+    outline: 2px solid blue;
+    text-overflow: clip;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+    white-space: nowrap;
+  }
+  span:nth-child(2) {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 50%;
+    background: var(--color-background-elements);
+  }
+}
+
+.shareLinkTextarea {
+  min-width: 600px;
+  height: 102px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border: 1px solid red;
+  padding: 10px;
+  font-family: 'Roboto Mono', monospace;
+  word-break: break-all;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.shareLinkTextarea:focus {
+  border: 2px solid var(--color-brand);
+  outline: none;
+  padding: 9px;
+}
+
+
+
+.HolderQRCode {
+  position: relative;
+  .loader {
+    text-align: center;
+    line-height: 50px;
+    vertical-align: middle;
+  }
+  img {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    margin: 0 auto;
+    width: 250px;
+    cursor: pointer;
+  }
+  &.qrLoaded {
+    img {
+      opacity: 1;
+      position: static;
+    }
+  }
+}
+
+.ButtonsHolder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.CopyLinkButton {
+  display: block;
+  width: 45%;
+}
+
+.ShareButtonHolder {
+  display: block;
+  width: 45%;
+  background: pink;
+
+  div {
+    display: block;
+    width: 100%;
+    padding-left: 0px;
+
+    button {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.WrapShareButton {
+  display: block;
+  background: red;
+}
+
+
+@include media-mobile {
+  .shareLinkTextarea {
+    min-width: auto;
+    width: 100%;
+  }
+  .HolderQRCode {
+    min-height: 50px;
+    img {
+      width: 95%;
+    }
+  }
+  
+  .shareLinkHolder {
+    position: relative;
+    .ButtonsHolder {
+      position: absolute;
+      top: -58px;
+      left: 0px;
+      right: 0px;
+    }
+    .linkHolder {
+      margin-top: 66px;
+    }
+  }
+}

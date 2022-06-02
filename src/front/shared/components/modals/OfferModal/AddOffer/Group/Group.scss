@@ -1,0 +1,41 @@
+.groupField {
+  width: 100%;
+  display: inline-flex;
+  height: 68px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-border);
+  text-align: center;
+  margin-left: 0;
+  border-radius: 3px;
+}
+
+.inputRoot {
+  min-width: 0;
+  flex: auto 1 1;
+}
+
+.inputContainer {
+  border-radius: 6px 0 0 6px !important;
+  box-shadow: none !important;
+}
+
+input:disabled {
+  background-color:#eee;
+}
+
+@include media-mobile {
+  .groupField {
+    width: calc(100vw - 35px);
+    display: flex;
+    justify-content: space-between;
+  }
+  .groupField:first-child {
+    margin-bottom: 20px;
+  }
+  .inputRoot {
+    text-align: left;
+  }
+  .inputContainer input {
+    font-size: 14px;
+  }
+}

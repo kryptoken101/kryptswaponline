@@ -1,0 +1,423 @@
+.swap {
+  padding-top: 20px;
+}
+
+.swapMobile {
+  padding-top: 0;
+}
+
+.swapContainer {
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+@media all and (max-width: 570px) {
+  .swapContainer {
+    display: block;
+  }
+}
+
+.reloadText {
+  text-align: center;
+  color: var(--color-notice);
+  cursor: pointer;
+}
+
+.swapContainerInfo {
+  position: relative;
+  display: flex;
+  width: 600px;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1.25em;
+}
+
+.linkText {
+  text-align: left;
+  margin-bottom: -3px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.canceled {
+  color: var(--color-f-error);
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 78px;
+  position: relative;
+  cursor: pointer;
+}
+
+.canceledSwapInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .pseudolink {
+    margin: 2em 0;
+  }
+}
+
+.included {
+  margin-left: 5%;
+  top: -4px;
+  position: relative;
+}
+
+.swapInfo {
+  max-width: 600px;
+  margin-bottom: 1.25em;
+  text-align: center;
+  font-size: 18px;
+}
+
+.onlineIndicator {
+  font-size: 15px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.online {
+  color: var(--color-good);
+}
+.offline {
+  color: var(--color-f-error);
+}
+
+@include media-mobile {
+  .loaderHolder {
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 2px;
+  }
+  .included {
+    margin-left: 0;
+    font-size: 11px;
+  }
+}
+
+.topUpLink {
+  border: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow);
+  font-size: 18px;
+  margin-top: 0px;
+  position: relative;
+  margin-bottom: 1.25rem;
+  padding: 30px 25px 75px 35px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: left;
+  background: var(--color-background-elements);
+  max-width: 600px;
+}
+
+@include media-mobile {
+  .topUpLink {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
+.top {
+  width: 100%;
+}
+
+@include media-mobile {
+  .top {
+    display: flex;
+    width: 100%;
+    height: 70px;
+  }
+  .onlineIndicator {
+    position: relative;
+    font-size: 15px;
+    width: 100%;
+    margin-top: 0px;
+    text-align: center;
+  }
+}
+
+.qrImg {
+  position: relative;
+  width: 100%;
+}
+
+.message {
+  max-width: 100%;
+}
+
+.btcMessage {
+  margin-top: 0.5em;
+  max-width: 100%;
+  font-size: 21px;
+  display: block;
+  margin-right: 5px;
+  z-index: 1;
+  position: relative;
+}
+
+.qr span {
+  font-size: 9px;
+  height: 3em;
+}
+
+.qr i {
+  position: relative;
+  top: 9px;
+}
+
+.linkTransactions {
+  display: inline-block;
+  margin-left: 5px;
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+      color: var(--color-link);
+    }
+  }
+}
+
+.btcMessage span > div {
+  display: inline-block;
+}
+
+@include media-mobile {
+  .btcMessage {
+    font-size: 11.2px;
+    width: 60%;
+  }
+}
+
+.lockTime {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: max-content;
+  transform: translateX(-50%);
+  i {
+    position: absolute;
+    top: 4px;
+    left: -25px;
+  }
+}
+
+@include media-mobile {
+  .lockTime {
+    left: 50%;
+    transform: translateX(-50%);
+    i {
+      left: -20px;
+    }
+  }
+}
+
+.copyText {
+  position: absolute;
+  left: 0px;
+  bottom: -40px;
+  color: var(--color);
+}
+
+.qr {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 1em;
+  img {
+    width: 265px;
+  }
+  button {
+    width: 100%;
+    margin: 0 1em;
+    height: 56px;
+    display: flex;
+    width: 56px;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--box-shadow);
+    background: var(--color-background-elements);
+    color: var(--color);
+    align-items: center;
+    flex-direction: column;
+    &:hover {
+      background: var(--color-indicating);
+    }
+  }
+}
+
+@include media-mobile {
+  .qr {
+    a {
+      font-size: 9px;
+      height: 30px;
+      width: 100%;
+      display: block;
+      padding: 10px;
+      position: static;
+    }
+    button {
+      display: none;
+    }
+  }
+}
+
+.linkAddress {
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 18px;
+  align-items: center;
+  height: 56px;
+  display: flex;
+  color: var(--color-background-elements);
+  display: flex;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow);
+  background: var(--color-background-elements);
+  padding: 10px 15px;
+  color: var(--color);
+
+  &:hover {
+    color: var(--color);
+    background: var(--color-background-elements);
+  }
+}
+
+.linkAddress {
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.fa-copy-in {
+  background: var(--color);
+  color: var(--color-background-elements);
+}
+
+.button {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.pseudolink {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 690px) {
+  .topUpLink {
+    width: 100%;
+    .top {
+      width: 100%;
+    }
+  }
+  .swapContainerInfo {
+    width: 100%;
+  }
+  .linkAddress {
+    font-size: 14px;
+  }
+
+}
+
+@include media-tablet {
+  .swapContainerInfo {
+    order: 2;
+  }
+  .swapInfo {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 6px;
+    background: #cecece3b;
+    color: var(--color);
+    padding: 7px 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    order: 1;
+  }
+  .swapContainer {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+
+@include media-mobile {
+  .swapInfo {
+    order: 1;
+  }
+  .swapContainerInfo {
+    order: 2;
+  }
+  .transaction {
+    font-size: 8.5px;
+    a {
+      font-size: 8.5px;
+    }
+  }
+  .linkTransactions {
+    display: block;
+    margin-left: 0px;
+    a {
+      font-size: 11px;
+    }
+  }
+  .topUpLink {
+    padding: 15px 20px;
+    padding-bottom: 70px;
+  }
+  .swapInfo {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 6px;
+    background: #cecece3b;
+    color: var(--color);
+    padding: 7px 20px;
+    width: 100%;
+  }
+  .linkText {
+    font-size: 11px;
+    margin-top: 20px;
+  }
+
+  .qrImg > div {
+    height:unset;
+  }
+
+  .qr {
+    justify-content: end;
+    width: max-content;
+    margin: 1em 0;
+  }
+  .swap {
+    display: block;
+    width: 100%;
+    font-size: 11px;
+  }
+  .swapMobile {
+    margin-top: 0;
+  }
+}
+
+.information {
+  position: relative;
+  flex-basis: 100%;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.icon {
+  margin-right: 1%;
+  cursor: pointer;
+}
+

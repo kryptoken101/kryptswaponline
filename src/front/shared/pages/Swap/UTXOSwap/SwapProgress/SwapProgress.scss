@@ -1,0 +1,211 @@
+.container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  margin-bottom: 1.25rem;
+}
+
+.metamask_attention,
+.attention {
+  padding: 0.9rem 0;
+  color: var(--color-f-error);
+  font-size: 1em;
+}
+
+.metamask_attention {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.info {
+  margin-top: 10px;
+  display: block;
+  position: relative;
+  div:first-child {
+    display: inline-block;
+  }
+}
+
+.title {
+  min-width: 0;
+  flex: auto 1 1;
+  line-height: 22px;
+  font-size: 24px;
+  text-align: center;
+  &.uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.closeButton {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  transition: opacity .33s $ease-out-quadratic;
+
+  &:hover {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.header {
+  height: 88px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.saveSecretKey {
+  display: block;
+  color: var(--color-bad);
+  em {
+    display: block;
+    font-size: 0.8rem;
+    font-style: normal;
+    word-wrap: break-word;
+  }
+}
+
+.stepContainer {
+  width: 600px;
+  text-align: center;
+}
+
+.stepInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+}
+
+.swapInfo {
+  position: absolute;
+  width: 600px;
+  top: -45px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.transaction {
+  display: block;
+  margin-bottom: 1.25rem;
+  a {
+    font-size: 13px;
+  }
+}
+
+.btnRefund {
+  button {
+    display: block;
+    margin: auto;
+  }
+}
+
+.tryAgain {
+  font-size: 12px;
+  color: var(--color-bad);
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.timerRefund {
+  color: var(--color);
+  margin-bottom: 1.25rem;
+
+  span {
+    display: block;
+  }
+}
+
+.finishButtonsHolder {
+  line-height: 56px;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.finishButtonsHolder button {
+  width: 40%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.dontLeave {
+  color: var(--color-bad);
+
+  span {
+    span {
+      color: var(--color);
+    }
+  }
+}
+
+
+.refundTransaction,
+.refundTransactionHash {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  word-wrap: break-word
+}
+
+@include media-tablet {
+  .container {
+    width: 600px;
+  }
+}
+
+@media all and (min-width: 570px) and (max-width: 670px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media all and (min-width: 320px) and (max-width: 570px) {
+  .container {
+    width: 100%;
+  }
+  .info {
+    margin-top: 5px;
+    div {
+      font-size: 13px;
+    }
+  }
+  .stepContainer {
+    width: 100%;
+    border: none;
+  }
+  .overlay {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    width: 100%;
+  }
+  .transaction {
+    top: -5px;
+    a {
+      font-size: 12px;
+      overflow: hidden;
+      width: 100%;
+      display: block;
+    }
+  }
+  .finishButtonsHolder button {
+    width: 90%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

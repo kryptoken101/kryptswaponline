@@ -1,0 +1,77 @@
+.commentTextarea {
+  overflow: hidden !important;
+  resize: none;
+}
+
+.date {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: Roboto, sans-serif;
+  color: var(--color-notice);
+  white-space: pre-wrap;
+  cursor: pointer;
+  width: 75%;
+}
+
+.comment {
+  color: var(--color);
+}
+.add-link {
+  text-align: center;
+  cursor: pointer;
+  padding: 3px 5px;
+  text-decoration: underline;
+  margin-top: 15px;
+}
+.wrap-block {
+  position: relative;
+}
+
+
+.input {
+  font-size: 12px;
+  color: var(--color-notice);
+  border: 1px solid var(--color-notice);
+  width: 75%;
+  padding-bottom: 5px;
+  position: relative;
+  margin: auto;
+  margin-top: 15px;
+
+  textarea {
+    width: 85%;
+    font-family: Roboto, sans-serif;
+  }
+
+  .submit {
+    color: var(--color-success);
+    position: absolute;
+    font-size: 16px;
+    right: 30px;
+    top: -1px;
+  }
+
+  .close {
+    color: var(--color-bad);
+    margin-right: 5px;
+    font-size: 22px;
+    position: absolute;
+    right: 0;
+    top: -7px;
+  }
+}
+@media all and (max-width: 767px) {
+  .date {
+    width: 65%;
+  }
+}
+
+.commentText {
+  margin-top: 0.5em;
+  border: 2px solid var(--color-border);
+  padding: 4px;
+  border-radius: var(--main-component-border-radius);
+  border-top-left-radius: 0px;
+  background: var(--color-pale);
+  font-weight: normal;
+}

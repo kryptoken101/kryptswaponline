@@ -1,0 +1,31 @@
+.social-menu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 0;
+  padding: 0;
+
+  & li {
+    margin: 0 5px;
+  }
+}
+
+.icon {
+  color: var(--color-brand-hover);
+  font-size: 24px;
+  text-align: center;
+  transition: color 300ms ease;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-brand);
+  }
+}
+
+@include media-mobile {
+  .social-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

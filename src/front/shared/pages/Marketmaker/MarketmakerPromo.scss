@@ -1,0 +1,143 @@
+.mm-promo-page {
+
+  section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2em 0;
+  }
+
+  section + section {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .section-title {
+    margin: 0 auto 1em;
+    max-width: 20em;
+    font-style: normal;
+    line-height: 1em;
+    font-size: 30px;
+    text-align: center;
+    @include ff-regular;
+  }
+
+  p {
+    margin-bottom: 0.5em;
+  }
+
+  .promoHeader {
+    padding-top: 0;
+    text-align: center;
+
+    p {
+      max-width: 30em;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+  }
+
+  .installExtensionBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .extensionPromoImg {
+      display: block;
+      margin: 0 auto 1em;
+      width: 70%;
+      height: intrinsic;
+    }
+
+    button {
+      @include ff-light;
+      letter-spacing: 0.05rem;
+    }
+
+    .devVersionLink {
+      display: inline-block;
+      margin-top: 1em;
+      text-decoration: underline;
+    }
+  }
+
+  .select-mode {
+
+    .modes {
+      display: flex;
+      flex-wrap: wrap;
+
+      .mode {
+        flex: 40%;
+        margin: 1em;
+      }
+
+      @media (max-width: 820px) {
+        display: block;
+      }
+    }
+
+    .mode {
+      margin-bottom: 1.8em;
+      box-shadow: rgba(0,0,0, 0.2) 0 4px 24px;
+      border-radius: 10px;
+      padding: 1.5em 1em;
+
+      .mode-title {
+        color: var(--color-brand);
+        font-weight: 500;
+      }
+      .number {
+        font-weight: bold;
+      }
+      .mode-button {
+        margin: 1.5em auto 0;
+        min-width: 100px;
+        display: block;
+      }
+    }
+  }
+}
+
+.pseudLinksWrapper {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.6;
+}
+
+.pseudLink {
+  color: var(--color-notice);
+  font-size: 0.8rem;
+
+  &:hover {
+    color: var(--color-notice);
+  }
+
+  & + & {
+    margin-left: 0.5rem;
+  }
+}
+
+@include media-mobile {
+  .mm-promo-page {
+    .promoHeader {
+      padding: 1em;
+    }
+
+    .section-title {
+      font-size: 1.5em;
+      line-height: 1.3em;
+    }
+
+    .promoDescription {
+      font-size: 0.95em;
+    }
+  }
+
+  .installExtensionBody {
+    button,
+    .devVersionLink {
+      font-size: 0.9em;
+    }
+  }
+}

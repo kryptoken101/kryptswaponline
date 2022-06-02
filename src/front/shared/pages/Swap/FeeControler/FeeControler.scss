@@ -1,0 +1,49 @@
+.FeeController {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 600px;
+  border-radius: 20px;
+  padding: 30px 15px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow);
+  background: var(--color-background-elements);
+  color: var(--color);
+  font-size: 16px;
+
+  .address {
+    font-weight: bold;
+    max-width: 540px;
+    margin: 30px 0;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.feeHeading {
+  font-size: 18px;
+  margin-bottom: 1em;
+}
+
+.warning {
+  font-size: 70px;
+  color: #ff3b3b;
+  margin-bottom: 5px;
+}
+
+.button {
+  cursor: pointer;
+  width: 200px;
+  margin-left: 20%;
+  background: #5100e0;
+  margin: 0;
+  &:hover {
+    background: #782cff;
+  }
+}
+

@@ -1,0 +1,113 @@
+.faQuestions {
+  display: block;
+  width: 100%;
+  @include ff-regular;
+  padding-left: 1px;
+  font-size: 13px;
+  line-height: 1.538em;
+
+  &__header {
+    @include ff-bold;
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  &__tabsContainer {
+    margin-top: 10px;
+  }
+}
+
+.tab {
+  width: 100%;
+  margin-bottom: 5px;
+  user-select: none;
+
+  &__header {
+    display: flex;
+    position: relative;
+    padding-left: 23px;
+    @include ff-semibold;
+    cursor: pointer;
+    color: var(--color);
+  }
+
+  &__content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    color: var(--color-indicating);
+
+    &_active {
+      visibility: visible;
+      opacity: 1;
+      max-height: 1000px;
+      padding-bottom: 15px;
+      overflow-y: visible;
+    }
+  }
+}
+
+$chrestStripWidth: 2px;
+$chrestStripHeight: 12px;
+
+.feeInfoTitle {
+  margin: 0 0 0.5em;
+  font-size: 1.1em;
+}
+
+.chrest {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+
+  &_active {
+    transform: rotate(0deg) translateX(0px) translateY(0px) !important;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &::after,
+  &::before {
+    display: block;
+    content: '';
+    position: relative;
+    background: var(--color-indicating);
+    border-radius: 1px;
+  }
+
+  &::before {
+    height: $chrestStripWidth;
+    width: $chrestStripHeight;
+    left: 0;
+    top: ($chrestStripHeight * 0.5) + ($chrestStripWidth * 0.5);
+  }
+
+  &::after {
+    width: $chrestStripWidth;
+    height: $chrestStripHeight;
+    left: ($chrestStripHeight * 0.5) - ($chrestStripWidth * 0.5);
+    top: 0px;
+  }
+}
+
+.descriptionFee {
+  margin: 0;
+
+  b {
+    opacity: 0.7;
+    font-family: 'Roboto Mono', monospace;
+  }
+}
+
+.link {
+  font-size: 1em;
+}
+
+@media all and (max-width: 992px) {
+  .faQuestions {
+    padding: 0 25px;
+  }
+}

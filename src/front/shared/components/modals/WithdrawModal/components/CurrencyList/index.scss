@@ -1,0 +1,159 @@
+.coin {
+  position: relative;
+  z-index: 1;
+}
+
+.tokenStandard {
+  @include ff-mono;
+  display: inline-block;
+  margin-left: 0.6em;
+  font-size: 0.8em;
+  color: var(--color-notice);
+}
+
+.amount {
+  position: absolute;
+  text-align: right;
+  right: 60px;
+  font-size: 13px;
+
+  .usd {
+    min-height: 13px; // top element does not go down if no currency
+    color: var(--color-notice);
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 11px;
+
+    .usd {
+      font-size: 10px;
+    }
+  }
+
+  @include media-mobile {
+    right: 50px;
+  }
+}
+
+.customSelectArrow {
+  position: absolute;
+  right: 25px;
+  &:before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    display: block;
+    border-top: 2px solid var(--color-notice);
+    border-right: 2px solid var(--color-notice);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+}
+
+.customSelectArrow.active {
+  &:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+.customSelectValue {
+  border: 1px solid var(--color-border);
+  height: 68px;
+  background: var(--color-background-elements);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+    a {
+      font-size: 13px;
+      color: var(--color-brand);
+
+      &:hover {
+        color: var(--color-brand);
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 11px;
+      }
+    }
+    .address {
+      color: var(--color-notice);
+      font-size: 12px;
+      @include media-mobile {
+        display: none;
+      }
+    }
+    .mobileAddress {
+      color: var(--color-notice);
+      font-size: 12px;
+      > div {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.customSelectList {
+  margin-top: 10px;
+  position: absolute;
+  z-index: 1111111;
+  width: 100%;
+  max-height: 300px;
+  background: var(--color-background-elements);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 5px 0px;
+  box-shadow: var(--box-shadow);
+
+  .amount {
+    right: 10px;
+  }
+}
+
+.customSelectListItem {
+  margin-top: -1px;
+  padding-left: 10px;
+  background: var(--color-background-elements);
+  transition: 0.1s;
+
+  &:hover {
+    background-color: var(--color-pale);
+  }
+
+  &.disabled {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      content: '';
+      background: var(--color-background-elements);
+      opacity: 0.7;
+      width: 100%;
+      height: 100%;
+      z-index: 1111;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding-left: 0;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .customSelectValue {
+    cursor: pointer;
+    div {
+      .mobileAddress {
+        font-size: 10px;
+      }
+    }
+  }
+}

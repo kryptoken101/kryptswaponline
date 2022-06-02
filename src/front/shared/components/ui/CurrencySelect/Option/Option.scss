@@ -1,0 +1,26 @@
+.optionrow {
+  white-space: nowrap;
+}
+
+.icon {
+  &[role="letter"] {
+    color: var(--color-f-brightest);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  color: var(--color-f-brightest);
+  background-color: #47454a;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 47%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}

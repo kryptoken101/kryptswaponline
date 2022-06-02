@@ -1,0 +1,17 @@
+export default [
+  'BTC',
+  'BTC (SMS-Protected)',
+  'BTC (Multisig)',
+  'ETH',
+  'BNB',
+  'MATIC',
+  'ARBETH',
+  'GHOST',
+  'NEXT',
+  '{ETH}SWAP',
+  '{ETH}HDP',
+  '{ETH}USDT',
+  '{ETH}MSK',
+  '{ETH}RURCASH',
+  '{ETH}USDSWIFT',
+]

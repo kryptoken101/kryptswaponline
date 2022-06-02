@@ -1,0 +1,279 @@
+.dropDown {
+  @include inline-block;
+  background: var(--color-background-elements);
+  position: relative;
+  border-radius: 6px;
+  box-shadow: rgba(var(--color), 0.08) 0 3px 9px 0;
+  border: 1px solid transparent;
+
+  &.active {
+    width: 100%;
+    border-color: var(--color-indicating);
+    z-index: 5;
+    background: var(--color-background-elements);
+    box-shadow: var(--box-shadow);
+    height: max-content;
+    border-radius: 2px !important;
+
+    .arrow {
+      display: none;
+    }
+
+    .closeBtn {
+      display: block;
+      color: var(--color);
+      position: absolute;
+      right: 0;
+      top: 20px;
+      right: 14px;
+    }
+
+    .searchInput {
+      width: 100%;
+
+      input {
+        &:focus {
+          border-bottom: 1px solid var(--color);
+        }
+      }
+    }
+
+    .selectedItem {
+      padding: 0 20px;
+      height: 250px;
+    }
+  }
+}
+
+.simpleDropdown {
+  border-radius: 0 6px 6px 0 !important;
+  position: absolute;
+  top: 5px;
+  right: 1px; // for border
+  box-shadow: none;
+  background: transparent;
+
+  &.active {
+    top: 70px;
+    border: none;
+    width: auto;
+
+    .selectedItem {
+      height: auto;
+    }
+  }
+
+  .selectedItem {
+    @include ff-bold;
+  }
+}
+
+.simplestDropdown {
+  display: flex;
+
+  // when drop down is opened
+  .select {
+    right: auto;
+    border: none;
+    box-shadow: var(--box-shadow);
+  }
+
+  .dropDownItem {
+    height: 2.5em;
+    padding-left: 2em;
+    line-height: 2.5em;
+  }
+
+  .selectedItem {
+    height: 57px;
+  }
+
+  &.active {
+    border-color: transparent;
+
+    .selectedItem {
+      height: 57px;
+    }
+  }
+}
+
+.smallTooltip,
+.dropDownLabel {
+  color: var(--color);
+}
+
+.closeBtn,
+.activeLabel,
+.dropDownLabel {
+  display: none;
+}
+
+.smallTooltip {
+  > span {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+    span {
+      font-size: 10px;
+    }
+  }
+}
+
+.listName {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--color);
+  opacity: 0.4;
+  position: relative;
+  text-align: left;
+  display: block;
+  margin-left: 22px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.fullTitle {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color);
+  margin-right: 9px;
+  margin-top: 0px;
+}
+
+.searchInput {
+  width: 75px;
+
+  & > div {
+    box-shadow: none;
+  }
+
+  & input {
+    border-radius: 0;
+
+    &:focus {
+      border: none;
+    }
+  }
+}
+
+.selectedItem {
+  height: 57px;
+  line-height: 60px;
+  padding-right: 40px;
+  padding-left: 16px;
+  min-width: 135px;
+  background-color: var(--color-background-elements);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  text-align: right;
+  font-size: 18px;
+  white-space: nowrap;
+  font-weight: 500;
+  border-color: var(--color-border);
+  @include no-user-select;
+
+  &.left {
+    padding-left: 40px;
+    padding-right: 16px;
+    text-align: left;
+  }
+
+  &.single {
+    cursor: default;
+  }
+
+  img {
+    display: none;
+  }
+}
+
+.arrow {
+  @include arrow('down', 9px, 2px, var(--color-notice));
+  margin-top: -6px;
+  position: absolute;
+  top: 50%;
+  right: 19px;
+
+  &.left {
+    right: 0;
+    left: 19px;
+  }
+}
+
+.disabled {
+  opacity: 0.2;
+  filter: grayscale;
+}
+
+.selectedItemInner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &.reducedLength {
+    > * {
+      display: block;
+      width: 37%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.select {
+  min-width: 100%;
+  max-height: 160px;
+  background-color: var(--color-background-elements);
+  position: absolute;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 9999;
+  background: var(--color-background-elements);
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  box-shadow: rgba(var(--color), 0.15) 0 3px 9px 0;
+}
+
+.dontscroll {
+  max-height: auto;
+  overflow-y: hidden;
+}
+
+.dropDownItem {
+  height: 56px;
+  line-height: 56px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-background-elements);
+  padding: 0 16px;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  padding-left: 60px;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  &:hover {
+    background-color: var(--color-pale);
+  }
+}
+
+@include media-mobile {
+  .fullTitle {
+    font-size: 14px;
+  }
+
+  .dontscroll {
+    max-height: auto;
+    overflow-y: hidden;
+    left: calc(50% - 50vw + 1em);
+    width: calc(100vw - 40px);
+  }
+}

@@ -1,0 +1,27 @@
+.history {
+  display: block;
+  box-shadow: var(--box-shadow);
+  background: var(--color-background-elements);
+  border-radius: var(--main-component-border-radius);
+  padding: 25px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.historyHeading {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.historyLoader {
+  overflow: hidden;
+}
+
+@media all and (max-width: 767px) {
+  .history {
+    padding: 15px;
+    margin-top: 0;
+  }
+}

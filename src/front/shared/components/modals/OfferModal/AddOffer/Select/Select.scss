@@ -1,0 +1,58 @@
+.groupField {
+  width: 100%;
+  position: relative;
+  display: flex;
+  border-radius: 6px;
+  height: 44px;
+  margin-bottom: 22px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0px;
+  font-family: 'Roboto Mono', monospace;
+  & p {
+    margin: 0;
+  }
+  button {
+    border: none;
+    width: 20%;
+  }
+}
+
+.balance {
+  text-align: left;
+  font-size: 15px;
+}
+
+.group {
+  position: relative;
+  margin-right: 12px;
+  width: 82%;
+  display: flex;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cell {
+  color: var(--color);
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.switchButton {
+  font-size: 1.2rem;
+  transform: rotate(-90deg);
+
+  button {
+    width: 100%;
+  }
+}
+
+@include media-mobile {
+  .groupField {
+    margin-bottom: 25px;
+  }
+}

@@ -1,0 +1,40 @@
+# editors
+
+.idea
+.DS_Store
+.eslintcache
+*-lock.*
+yarn*
+
+# node
+
+node_modules
+
+
+# build
+
+build-*
+app.*.css
+app.*.js
+mainnet.build/
+
+
+# temp files
+
+src/core/examples/react/swap
+src/core/examples/vanilla/swap
+
+src/bot/.ipfs
+src/bot/.storage
+src/bot/.env
+
+.ipfs
+.storage
+.env
+swaponline.github.io
+tradeconfig.mainnet.json
+tradeconfig.testnet.json
+
+# tests files
+
+tests/e2e/screenshots

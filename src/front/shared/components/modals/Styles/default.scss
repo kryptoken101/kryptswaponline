@@ -1,0 +1,215 @@
+.note {
+  font-size: 14px;
+  color: #aaa;
+  padding-top: 10px;
+}
+
+.r-tooltip {
+  max-width: 80vw;
+}
+
+.link {
+  color: var(--color-brand);
+}
+
+.error {
+  margin-top: 20px;
+}
+
+.rednote {
+  font-size: 12px;
+  color: #aaa;
+  height: 0px;
+  color: var(--color-f-error);
+  position: absolute;
+  bottom: -5px;
+}
+
+.groupField {
+  width: 100%;
+  display: inline-flex;
+  vertical-align: center;
+  border-radius: 6px;
+  text-align: center;
+  position: relative;
+}
+
+.balance {
+  position: absolute;
+  right: 6em;
+  top: -0.2em;
+  padding: 0 10px 0 25px;
+  background-color: white;
+  text-align: left;
+  font-size: 13px;
+  z-index: 1;
+  color: #b5b5b5;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.notice {
+  line-height: 140%;
+  color: var(--color-notice);
+  @include ff-regular;
+  width: 78%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.rednotes {
+  font-size: 16px;
+  text-align: center;
+  color: var(--color-f-error);
+}
+
+.buttonCenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.buttonHalfFullWidth {
+  width: 50%;
+}
+
+.buttonFull {
+  display: block;
+}
+
+.buttonFullMargin {
+  margin-top: 55px;
+  display: block;
+}
+
+.cell {
+  color: #3b95ff;
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    color: darken(#3b95ff, 1)
+  }
+}
+
+.group {
+  width: 100%;
+  display: inline-flex;
+  min-height: 60px;
+  border-radius: 6px;
+  text-align: center;
+}
+.input {
+  width: 100%;
+  text-align: left;
+  display: block;
+}
+
+.label {
+  @include ff-semibold;
+}
+
+.button {
+  height: 48px;
+
+  &_sms {
+    flex: 1 140px;
+  }
+
+  &:hover {
+    color: #7c1de9;
+    background: #dfc5ff;
+  }
+}
+
+.inputName {
+  white-space: nowrap;
+}
+
+.downLabel {
+  position: absolute;
+  top: 0.5em;
+}
+
+.highLevel {
+  // top: 3em;
+  position: relative;
+  // padding-bottom: 5em;
+}
+
+.lowLevel {
+  position: relative;
+  // padding-bottom: 7%;
+}
+
+.inputMargin25 {
+  margin-bottom: 25px;
+}
+
+@include media-mobile {
+  .button {
+    height: 100%;
+  }
+
+  .mobileFont {
+    font-size: 16px !important;
+  }
+
+  .balance {
+    position: absolute;
+    right: 7em;
+    top: 0.5em;
+    font-size: 10px;
+    padding: 0 5px 0 10px;
+  }
+
+  .downLabel {
+    top: 0.8em;
+  }
+
+  .input {
+    font-size: 11px;
+  }
+
+  .notice {
+    font-size: 70%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+
+.centerInfoBlock {
+  display: block;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--color-notice);
+  @include ff-regular;
+  width: 78%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+
+.content-overlay {
+  display: block;
+}
+
+.button-overlay {
+  display: block;
+}
+
+@include media-mobile {
+  .convent-overlay {
+    height: 100%;
+    padding-bottom: 56px;
+  }
+  .button-overlay {
+    background: var(--color-background-elements);
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 1rem;
+  }
+}

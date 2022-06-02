@@ -1,0 +1,132 @@
+// Convert to right VW variable
+//
+// font-size: vw(14);
+//
+@function vw($value) {
+  @return (0.3125vw * $value);
+}
+
+@mixin auth {
+  :global(.body-auth) & {
+    @content;
+  }
+}
+
+@mixin after {
+  &::after {
+    content: '';
+    display: block;
+    @content;
+  }
+}
+
+@mixin before {
+  &::before {
+    content: '';
+    display: block;
+    @content;
+  }
+}
+
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+}
+
+@mixin brand-color($property: color, $important: null) {
+  #{$property}: var(--color-brand) $important;
+}
+
+@mixin absolute-centring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+}
+
+@mixin no-user-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin square-block {
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+    line-height: 0;
+    font-size: 0;
+  }
+}
+
+@mixin arrow($dir, $size, $width, $color) {
+  content: '';
+  width: $size;
+  height: $size;
+  display: block;
+  border-top: $width solid $color;
+  border-right: $width solid $color;
+
+  @if ($dir == 'up') {
+    transform: rotate(-45deg);
+  }
+  @else if ($dir == 'right') {
+    transform: rotate(45deg);
+  }
+  @else if ($dir == 'down') {
+    transform: rotate(135deg);
+  }
+  @else if ($dir == 'left') {
+    transform: rotate(-135deg);
+  }
+}
+
+@mixin tick($color) {
+  width: 10px;
+  height: 6px;
+  background: transparent;
+  border: 2px solid $color;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+}
+
+@mixin ellipsis($width: 100%) {
+  max-width: $width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin underline($width, $color: "") {
+  border-bottom: $width solid transparent;
+  transition: all .3s;
+
+  @if ($color == "") {
+    &:hover {
+      @include brand-color(border-color);
+    }
+  }
+  @else {
+    &:hover {
+      border-color: $color;
+    }
+  }
+}

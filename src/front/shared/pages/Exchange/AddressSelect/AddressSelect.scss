@@ -1,0 +1,152 @@
+.addressSelect {
+  position: relative;
+
+  .label {
+    font-size: 15px;
+    @include ff-semibold;
+    display: inline-block;
+    padding: 7px 7px;
+    z-index: 2;
+    position: absolute;
+    top: -18px;
+    left: 10px;
+    background: var(--color-background-elements);
+    white-space: nowrap;
+    @include media-mobile {
+      top: -14px;
+      font-size: 12px;
+    }
+  }
+
+  .dropDown {
+    box-shadow: none;
+    border: none;
+    width: 100%;
+
+    & > div {
+      height: max-content !important;
+    }
+  }
+
+  & > div:nth-child(1) {
+    border: none;
+    height: auto;
+  }
+
+  & > div {
+    padding-left: 0px;
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+
+    div > {
+      padding: 0px;
+    }
+
+    & > span {
+      display: block;
+      font-weight: bold;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  &_error {
+    .dropDown > div > span {
+      color: var(--color-f-error);
+    }
+  }
+}
+
+.selectedInner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 58%;
+  z-index: 1;
+  background-color: var(--color-background-elements);
+
+  &.connectWrapper {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+  }
+
+  &_connectBtn {
+    border: transparent !important;
+    width: auto;
+    top: 2px;
+
+    & button {
+      width: 100px;
+      font-size: 0.8rem;
+      padding: unset;
+    }
+  }
+}
+
+.customWallet {
+  position: relative;
+  height: 100%;
+
+  &_site {
+    position: relative;
+  }
+
+  &_focus {
+    border: 1px solid var(--color-brand) !important;
+  }
+
+  .customAddressInput {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 0.9em;
+
+    input {
+      border: none;
+      margin: 0;
+      height: 40px;
+      padding: 0;
+      font-size: 16px;
+
+      &:focus {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+}
+
+.button {
+  margin-top: 0;
+  width: 64%;
+  height: 80%;
+  border-radius: 3px;
+  height: 36px;
+  font-size: 15px;
+  flex-basis: 100%;
+  box-shadow: none;
+
+  @include media-mobile {
+    font-size: 11px;
+  }
+}
+
+@include media-mobile {
+  .addressSelect {
+    .dropDown {
+      & > div {
+        & > span {
+          display: block;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

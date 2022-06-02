@@ -1,0 +1,46 @@
+.title {
+  max-width: 32em;
+  width: 80%;
+  margin: 2em auto;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.row {
+  margin-top: 10px;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cell {
+  margin: 1.2rem 0;
+}
+
+.linked {
+  color: var(--color-link) !important;
+  cursor: pointer;
+  text-align: center;
+}
+
+@media screen and (max-width: 860px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .cell {
+    min-width: 280px;
+    max-width: 700px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: scroll;
+  }
+}
+
+@include media-mobile {
+  .title {
+    font-size: 18px;
+  }
+} 

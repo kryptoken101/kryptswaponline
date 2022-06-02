@@ -1,0 +1,25 @@
+.errorWrapper {
+  height: 100vh;
+  width: 100vw;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.errorTitle {
+  max-width: 18em;
+  margin-bottom: 2em;
+  text-align: center;
+  color: var(--color-notice);
+}
+
+.errorCode {
+  max-width: 50em;
+  padding: 1em;
+  border-radius: 1rem;
+  background-color: var(--color-read-only);
+  color: var(--color-f-error);
+}

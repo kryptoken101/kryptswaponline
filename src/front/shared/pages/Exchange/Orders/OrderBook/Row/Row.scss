@@ -1,0 +1,61 @@
+.rowAmount {
+  color: var(--color);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.withIcon {
+  display: flex;
+  align-items: center;
+
+  & > * + * {
+    margin-left: 0.5em;
+  }
+}
+// mobile arrow between send and get currency
+.arrowsIcon {
+  margin: 0 0.8em;
+  color: var(--color);
+}
+
+.rowCell:nth-of-type(1) {
+  width: 10%;
+}
+.rowCell:nth-of-type(2) {
+  width: 25%;
+}
+.rowCell:nth-of-type(3) {
+  width: 25%;
+}
+.rowCell:nth-of-type(4) {
+  width: 25%;
+}
+
+.mobileRow {
+  .firstType,
+  .secondType {
+    color: var(--color-indicating);
+    display: block;
+  }
+
+  .tdContainer-1,
+  .tdContainer-2,
+  .tdContainer-3 {
+    position: relative;
+  }
+
+  .startButton {
+    width: auto;
+    height: auto;
+    margin-left: 0.6em;
+  }
+
+  .bigContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.linkedOrderHighlight {
+  outline: 2px dashed var(--color-brand);
+}

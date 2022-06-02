@@ -1,0 +1,299 @@
+.wallet {
+  margin: 30px 0;
+  @include ff-bold;
+}
+
+.btc {
+  background: orange;
+}
+
+.walletTable {
+  width: 100%;
+
+  td:first-child {
+    padding-left: 0;
+  }
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.yourAssets {
+  box-shadow: var(--box-shadow);
+  background: var(--color-background-elements);
+  border-radius: var(--main-component-border-radius);
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.yourAssetsHeading {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.yourAssetsDescr {
+  color: var(--color-notice);
+  font-size: 14px;
+  @include ff-regular;
+  line-height: 150%;
+}
+
+.yourBalance {
+  box-shadow: var(--box-shadow);
+  background: var(--color-background-elements);
+  border-radius: var(--main-component-border-radius);
+  height: fit-content;
+  @include ff-regular;
+
+  .multisigWaitCount {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12pt;
+    color: var(--color-f-error);
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.yourBalanceTop {
+  position: relative;
+  padding: 25px;
+}
+
+.yourBalanceDescr {
+  color: var(--color-notice);
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.yourBalanceValue {
+  display: flex;
+  height: 44px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+
+  .loaderHolder {
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  img {
+    margin-top: -5px;
+    width: 10px;
+    margin-right: 7px;
+  }
+
+  p {
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.yourBalanceBottomWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    opacity: 0.1;
+    content: '';
+    background: linear-gradient(180deg, var(--color-brand) 0%, rgba(97, 68, 229, 0) 100%);
+  }
+}
+
+.yourBalanceBottom {
+  position: relative;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    width: 48%;
+    z-index: 1;
+  }
+
+  button.button__invoice {
+    width: auto !important;
+    margin: 0 auto;
+  }
+}
+
+.yourBalanceCurrencies {
+  color: var(--color-indicating);
+  position: absolute;
+  left: 15px;
+  top: 25px;
+  justify-content: space-between;
+  display: flex;
+
+  .separator {
+    width: 1px;
+    height: 16px;
+    background: var(--color-border);
+    display: inline-block;
+    margin-top: 1px;
+  }
+
+  button {
+    padding: 0;
+    cursor: pointer;
+    @include ff-bold;
+    text-transform: uppercase;
+    margin: 0 10px;
+    font-size: 13px;
+  }
+
+  button.active {
+    color: var(--color);
+  }
+}
+
+.widgetBuild {
+  .yourBalanceBottom {
+    button {
+      width: 30%;
+    }
+  }
+}
+
+.addCurrencyBtnWrapper {
+  width: calc(100% - 28px);
+}
+
+@media all and (min-width: 993px) {
+  .walletTable {
+    display: inline-table;
+  }
+}
+
+@media all and (min-width: 767px) {
+  .widgetBuild {
+    .yourBalanceBottom {
+      flex-wrap: wrap;
+      height: auto;
+
+      &:before {
+        height: 156px;
+      }
+
+      button {
+        width: 48%;
+      }
+
+      button[id='exchangeBtn'] {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .walletTable {
+    display: inline-table;
+
+    td:first-child {
+      padding-left: 0px;
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+
+  .yourBalance,
+  .yourAssets {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .walletTable {
+    display: inline-table;
+
+    td:first-child {
+      padding-left: 25px;
+      left: auto;
+    }
+  }
+
+  .yourBalanceBottom {
+    &:before {
+      display: none;
+    }
+  }
+
+  .yourAssets {
+    padding: 20px 0;
+
+    .addCurrencyBtnWrapper {
+      width: calc(100% - 52px);
+      margin: auto;
+    }
+  }
+
+  .yourAssetsHeading,
+  .yourAssetsDescr {
+    padding: 0 25px;
+  }
+
+  .walletBalance {
+    width: 100%;
+  }
+
+  .yourBalance {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .yourAssets,
+  .yourBalance {
+    box-shadow: none;
+    background-color: var(--color-page-background);
+  }
+}
+
+@media all and (max-width: $media-mobile-end) {
+
+  .yourBalance,
+  .yourAssets {
+    margin: 0 0 5px;
+  }
+
+  .widgetBuild .yourBalanceBottom {
+    flex-wrap: wrap;
+
+    button {
+      width: 100%;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        width: 47%;
+      }
+
+      &:nth-child(n + 3) {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

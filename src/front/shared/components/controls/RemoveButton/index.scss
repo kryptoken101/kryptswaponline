@@ -1,0 +1,46 @@
+.removeButton {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  cursor: pointer;
+  @include inline-block;
+  opacity: 0.6;
+  border-radius: 50%;
+  border: none;
+  text-align: center;
+  transition: .1s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: .1rem;
+    height: 65%;
+    border-radius: 4px;
+    background-color: var(--color);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &.brand {
+    background: var(--color-brand);
+
+    &::before,
+    &::after {
+      background-color: var(--color-f-brightest);
+    }
+  }
+}

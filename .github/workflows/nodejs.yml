@@ -1,0 +1,56 @@
+name: Node CI
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Decrypt testWallets.json.gpg file
+      shell: bash
+      env:
+        SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE_FOR_TESTS }}
+      run: >
+        ./.github/scripts/decrypt_secret.sh
+    - name: npm install
+      uses: bahmutov/npm-install@v1
+      with:
+       useLockFile: false
+    - name: build testnet for tests
+      run: |
+        npm run build:testnet-tests
+    - name: run e2e tests
+      run: |
+        mkdir ./tests/e2e/screenshots
+        npm run test:e2e:actions
+    - name: Upload failure screenshots
+      uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        name: failure-screenshots
+        path: ./tests/e2e/screenshots
+        if-no-files-found: ignore
+    - name: Upload screenshots
+      uses: actions/upload-artifact@v2
+      with:
+        name: screenshots
+        path: ./tests/e2e/screenshots
+        if-no-files-found: ignore
+    - name: bot test
+      run: |
+        npm run bot:test
+      env:
+        CI: true
+

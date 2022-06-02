@@ -1,0 +1,27 @@
+@mixin ff-thin {
+  font-family: 'Manrope-Thin';
+}
+
+@mixin ff-light {
+  font-family: 'Manrope-Light';
+}
+
+@mixin ff {
+  font-family: 'Manrope-Regular';
+}
+
+@mixin ff-regular {
+  font-family: 'Manrope-Medium';
+}
+
+@mixin ff-semibold {
+  font-family: 'Manrope-SemiBold';
+}
+
+@mixin ff-bold {
+  font-family: 'Manrope-Bold';
+}
+
+@mixin ff-mono {
+  font-family: 'Roboto Mono', monospace;
+}

@@ -1,0 +1,24 @@
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: var(--color-background-elements);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+.overlayDashboardView {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+
+@include media-mobile {
+  .overlay {
+    position: absolute;
+  }
+}

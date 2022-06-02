@@ -1,0 +1,117 @@
+
+@keyframes errorAppend {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 300px;
+  }
+}
+
+@mixin errAppend {
+  animation: errorAppend 0.7s linear 1;
+  will-change: max-height, opacity;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.offerTitle {
+  margin-bottom: 3em;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.exchangeRate {
+  margin: 10px 0;
+  input {
+    border: none;
+    border-radius: 0;
+    border-right: 1px solid var(--color-border);
+    height: 66px;
+  }
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.toggleText {
+  display: flex;
+  align-items: center;
+}
+
+.controlsToggles {
+  margin-bottom: 9px;
+}
+
+.button {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 3px;
+  height: 68px;
+  font-size: 16px;
+  flex-basis: 47%;
+  box-shadow: none;
+}
+
+.error {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--color-f-error);
+
+  [role = "errorLink"] {
+    display: inline !important;
+    color: inherit !important;
+    vertical-align: inherit !important;
+    text-decoration: underline !important;
+  }
+}
+
+.Error {
+  display: flex;
+  align-items: center;
+  color: var(--color-background-elements);
+  padding: 0.3em 10px;
+  margin-top: -5px;
+  font-size: 13px;
+  background: var(--color-f-error);
+  border-radius: 3px;
+  margin-bottom: 15px;
+  @include errAppend();
+  a {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+  }
+}
+
+
+@include media-mobile {
+  .addOffer {
+    width: 100%;
+    .error {
+      span:nth-child(1) {
+        margin-right: 5px;
+      }
+      span:nth-child(2){
+        display: block;
+      }
+    }
+    .exchangeRate {
+      margin: 15px 0;
+    }
+  }
+}
+
+

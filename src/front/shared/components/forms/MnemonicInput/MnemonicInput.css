@@ -1,0 +1,147 @@
+/* 
+* ReactTags doesn't understand scss ext. Need to use css styles
+*/
+.react-tags {
+  position: relative;
+  padding: 14px 6px 9px;
+  border: 2px solid var(--color-border);
+  border-radius: 2px;
+
+  /* shared font styles */
+  font-size: 1em;
+  line-height: 1.2;
+
+  /* clicking anywhere will focus the input */
+  cursor: text;
+
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+.--full-width .react-tags {
+  width: 100%;
+}
+
+.react-tags.is-focused {
+  border: 2px solid var(--color-brand);
+}
+
+.react-tags__selected {
+  display: inline;
+}
+
+.react-tags__selected-tag {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 6px 6px 0;
+  padding: 6px 8px;
+  background: var(--color-pale);
+  color: var(--color-brand-hover);
+  font-weight: bold;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.react-tags__search {
+  display: inline-block;
+
+  /* match tag layout */
+  padding: 7px 2px;
+  margin-bottom: 6px;
+
+  /* prevent autoresize overflowing the container */
+  max-width: 100%;
+}
+
+.react-tags__search-input {
+  /* prevent autoresize overflowing the container */
+  max-width: 100%;
+
+  /* remove styles and layout from this element */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+
+  /* match the font styles */
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.react-tags__search-input::-ms-clear {
+  display: none;
+}
+
+.react-tags__suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.--is-mobile .react-tags {
+  width: 100%;
+}
+
+.react-tags__suggestions ul {
+  position: relative;
+  z-index: 1;
+  margin: 4px -1px;
+  padding: 0;
+  list-style: none;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-background);
+  background: var(--color-background-elements);
+}
+
+.--is-dark .react-tags__suggestions li {
+  border-bottom-color: var(--color-border);
+  background-color: var(--color-pale);
+}
+
+.--is-dark .react-tags__suggestions li mark {
+  color: var(--color-background-elements);
+}
+
+.react-tags__suggestions li {
+  border-bottom: 1px solid var(--color-background);
+  background-color: var(--color-background-elements);
+  padding: 6px 8px;
+}
+
+.react-tags__suggestions li mark {
+  text-decoration: underline;
+  font-weight: 600;
+  color: var(--color-brand);
+  background: none;
+}
+
+.react-tags__suggestions li:hover {
+  cursor: pointer;
+  background: var(--color-brand);
+}
+
+.react-tags__suggestions li.is-active {
+  background: var(--color-brand);
+}
+
+.react-tags__suggestions li:hover mark,
+.react-tags__suggestions li.is-active mark {
+  color: var(--color);
+}
+
+.react-tags__suggestions li.is-disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+@media screen and (min-width: 30em) {
+  .react-tags__search {
+    /* this will become the offsetParent for suggestions */
+    position: relative;
+  }
+
+  .react-tags__suggestions {
+    width: 240px;
+  }
+}

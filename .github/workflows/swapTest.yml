@@ -1,0 +1,50 @@
+name: BTC,ETH,BSC,MATIC e2e swap test
+
+on:
+  pull_request:
+    types: [ labeled ]
+
+jobs:
+  build:
+    if: ${{ github.event.label.name == 'swap test' }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: npm install and build testnet for tests
+      run: |
+        npm i
+        npm run build:testnet-tests
+
+    - name: run e2e swap test
+      run: |
+        mkdir ./tests/e2e/screenshots
+        npm run test:e2e_swap:actions
+
+    - name: Upload failure screenshots
+      uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        name: failure-screenshots
+        path: ./tests/e2e/screenshots
+        if-no-files-found: ignore
+    - name: Upload screenshots
+      uses: actions/upload-artifact@v2
+      with:
+        name: screenshots
+        path: ./tests/e2e/screenshots
+        if-no-files-found: ignore
+
+      env:
+        CI: true

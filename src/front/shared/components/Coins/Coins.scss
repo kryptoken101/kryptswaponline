@@ -1,0 +1,14 @@
+.coins {
+  display: flex;
+
+  > div {
+
+    &:first-child {
+      transform: translateX(5px);
+    }
+
+    &:last-child {
+      transform: translateX(-5px);
+    }
+  }
+}

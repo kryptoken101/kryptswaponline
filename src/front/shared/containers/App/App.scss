@@ -1,0 +1,19 @@
+body {
+  background-color: var(--color-page-background);
+  color: var(--color);
+}
+
+.compressor {
+  min-width: 320px;
+  background-color: var(--color-page-background);
+}
+
+.headerAndMain {
+  position: relative;
+}
+
+@media all and (max-width: 768px) {
+  .headerAndMain {
+    height: calc(100% + 60px);
+  }
+}

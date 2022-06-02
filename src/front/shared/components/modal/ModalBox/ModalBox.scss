@@ -1,0 +1,97 @@
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10011111111;
+  background: var(--color-background-elements);
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  height: 88px;
+  border-bottom: 1px solid var(--color-border);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  background: var(--color-background-elements);
+  z-index: 1002;
+}
+
+.headerContent {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  @include ff-bold;
+  color: var(--color);
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.title {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  pointer-events: none;
+  min-width: 0;
+  flex: auto 1 1;
+  line-height: 22px;
+  font-size: 24px;
+  text-align: center;
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  right: 20px;
+}
+
+@keyframes delayClose {
+  0% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.delayClose {
+  animation: delayClose 1.8s ease 1 forwards;
+}
+
+.contentContainer {
+  min-height: 0;
+  flex: auto 1 1;
+  position: relative;
+  padding: 0 30px;
+  overflow: auto;
+}
+
+.content {
+  min-width: 300px;
+  padding: 40px 0 100px;
+  font-size: 16px;
+}
+
+@include media-mobile {
+  .content {
+    min-width: auto;
+  }
+  .title {
+    font-size: 18px;
+    text-align: left;
+    left: 20px;
+  }
+}

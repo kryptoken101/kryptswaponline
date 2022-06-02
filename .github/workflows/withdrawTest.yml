@@ -1,0 +1,49 @@
+name: Test withdraw forms
+
+on:
+  pull_request:
+    types: [ labeled ]
+
+jobs:
+  build:
+    if: ${{ github.event.label.name == 'withdraw tests' }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: npm install, build and deploy 
+      run: |
+        npm i
+        npm run build:testnet-tests
+
+    - name: E2E tests
+      run: |
+        mkdir ./tests/e2e/screenshots
+        npm run test:e2e_send:actions
+
+    - name: Upload failure screenshots
+      uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        name: failure-screenshots
+        path: ./tests/e2e/screenshots
+        if-no-files-found: ignore
+    - name: Upload screenshots
+      uses: actions/upload-artifact@v2
+      with:
+        name: screenshots
+        path: ./tests/e2e/screenshots
+        if-no-files-found: ignore
+
+      env:
+        CI: true

@@ -1,0 +1,21 @@
+.invoiceModalHolder {
+  min-width: 400px;
+}
+
+.amountTooltip {
+  font-size: 13px;
+  position: absolute;
+  padding: 5px 10px;
+  z-index: 2;
+  right: 7px;
+  bottom: -13px;
+  font-family: 'Roboto Mono', monospace;
+  background-color: var(--color-background-elements);
+  color: var(--color-notice);
+}
+
+@include media-mobile {
+  .invoiceModalHolder {
+    min-width: auto;
+  }
+}

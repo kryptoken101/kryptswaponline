@@ -1,0 +1,60 @@
+.content {
+  margin: 0;
+  word-break: break-word;
+  text-align: center;
+}
+
+.depositInstruction {
+  border-radius: 0.3rem;
+  padding: 0.8rem;
+  margin-bottom: 1.1rem;
+  background-color: var(--color-inactive-border);
+
+  .title {
+    margin-bottom: 0.9rem;
+  }
+
+  .description {
+    margin: 0 auto;
+  }
+}
+
+.sendBtnsWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.actionBtn {
+  width: calc(50% - 5px);
+  position: relative;
+}
+
+.fiatDepositRow {
+  width: 100%;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.buttonsHolder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 10px;
+
+  button {
+    width: 30%;
+  }
+
+  &_2_buttons button {
+    width: 45%;
+  }
+}
+
+.qr {
+  text-align: center;
+
+  .address {
+    margin-top: 1rem;
+  }
+}

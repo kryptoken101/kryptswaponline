@@ -1,0 +1,434 @@
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: var(--main-component-border-radius);
+  padding: 35px 25px 40px;
+  margin-top: 5%;
+  box-shadow: var(--box-shadow);
+  background: var(--color-background-elements);
+}
+
+.closeButton {
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+  transform: scale(0.6) translate(10px, -3px);
+  right: 20px;
+  position: absolute;
+  top: 15px;
+  z-index: 9999;
+
+  div {
+    overflow: visible;
+  }
+}
+
+.wrapper h2 {
+  width: 450px;
+  margin-bottom: 30px;
+  font-size: 40px;
+  @include ff-bold;
+  line-height: 120%;
+}
+
+.mobileFormBody,
+.formBody {
+  margin: 0 16px;
+}
+
+.currencyChooserWrapper,
+.inLine {
+  display: flex;
+}
+
+.notMain {
+  min-height: 40px;
+  margin: 40px 0;
+}
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 2.5;
+  text-align: center;
+  background-color: var(--color-inactive-border);
+  color: var(--color-brand);
+  border: 1px solid var(--color-inactive-border);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+}
+
+.purple {
+  background-color: var(--color-brand);
+  color: #f0eefd;
+}
+
+.green {
+  background-color: var(--color-success);
+}
+
+.assetsTableIcon {
+  min-width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.stepButton {
+  position: relative;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 150%;
+  background: var(--color-brand);
+  color: var(--color-f-brightest);
+  height: 45px;
+  width: 100%;
+}
+
+.stepButton:disabled {
+  background-color: var(--color-inactive);
+  color: var(--color-brand);
+}
+
+.subHeader {
+  top: 5px;
+  position: relative;
+}
+
+.subHeader h5 {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 0;
+  @include ff-bold;
+  margin-bottom: 5px;
+}
+
+.subHeader p {
+  font-size: 13px;
+  margin-bottom: 7px;
+  color: var(--color-notice);
+  @include ff-bold;
+  line-height: 140%;
+}
+
+.currencyChooserWrapper {
+  padding: 30px 0;
+  overflow-x: auto;
+  margin: auto;
+}
+
+.smallArr {
+  justify-content: center;
+}
+
+.alertTooltipWrapper {
+  font-size: 0.8em;
+  padding: 0.3em 0.5em;
+  background: rgba(var(--color-bad), 0.6);
+  border-radius: 2px;
+}
+
+.buttonWrapper {
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  text-align: right;
+
+  button {
+    color: var(--color-brand);
+    @include ff-bold;
+    font-size: 14px;
+    text-decoration: underline;
+    padding: 0;
+  }
+}
+
+.card {
+  cursor: pointer;
+  background: var(--color-background-elements);
+  border: 1px solid var(--color-border);
+  box-sizing: border-box;
+  box-shadow: 0px 2px 12px var(--color-pale);
+  border-radius: var(--card-border-radius);
+  padding: 10px;
+  list-style: none;
+  display: grid;
+  height: 140px;
+  min-width: 110px;
+  margin: 7px;
+  position: relative;
+
+  em {
+    position: absolute;
+    text-align: right;
+    right: 15px;
+    top: 10px;
+    width: 60px;
+    font-size: 10px;
+    color: var(--color-brand);
+  }
+
+  b {
+    font-weight: bolder;
+    font-size: 13px;
+  }
+
+  li {
+    font-weight: 100;
+    opacity: 0.8;
+    font-size: 10px;
+    @include ff-bold;
+    line-height: 18px;
+    text-align: center;
+  }
+}
+
+.currencyInfoList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    word-break: break-all;
+  }
+}
+
+.connectWalletIcon {
+  width: 22px;
+  margin-right: 4px;
+}
+
+.cupture1 {
+  margin-right: 5px;
+}
+
+.cardDisabled {
+  opacity: 0.7 !important;
+}
+
+.purpleBorder {
+  border-color: var(--color-brand) !important;
+}
+
+.cardActivated {
+  border: 1px solid rgba(102, 204, 87, 0.64) !important;
+
+  div,
+  img {
+    opacity: 0.5 !important;
+  }
+
+  em {
+    color: var(--color-success) !important;
+  }
+}
+
+.cardActivated.purpleBorder {
+  border-color: var(--color-brand) !important;
+
+  div,
+  img {
+    opacity: 1 !important;
+  }
+
+  em {
+    color: var(--color-brand) !important;
+  }
+}
+
+.secureSize {
+  height: 160px;
+  width: 140px;
+  text-align: center;
+}
+
+.securityIcon {
+  img {
+    max-width: 70%;
+    max-height: 70%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .flex {
+    display: flex;
+  }
+
+  .ind {
+    height: 0px;
+    text-align: right;
+  }
+
+  .stepButton {
+    width: 100%;
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    height: 65px;
+    z-index: 1111111;
+  }
+
+  .wrapper {
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .wrapper h2 {
+    width: 100%;
+    height: 45px;
+    right: 39px;
+    top: 93px;
+    margin-bottom: 40px;
+    @include ff-bold;
+    font-style: normal;
+    font-size: 23px;
+    line-height: 120%;
+  }
+
+  .subHeader {
+    width: 100%;
+    margin: 0;
+  }
+
+  .currencyChooserWrapper {
+    overflow-y: auto;
+    display: block;
+    padding: 0;
+    height: 370px;
+  }
+
+  .second {
+    height: 59px;
+    margin-bottom: 0px;
+  }
+
+  .subHeader h5 {
+    @include ff-bold;
+    font-style: normal;
+    font-size: 18px;
+    margin: 5px 0;
+  }
+
+  .capture {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 800;
+    color: var(--color-notice);
+  }
+
+  .inLine {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .steps {
+    width: 100px;
+  }
+
+  .logo {
+    margin: auto 0;
+  }
+
+  .buttonWrapper {
+    top: 30px;
+    right: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+
+    button {
+      color: var(--color-brand);
+      @include ff-bold;
+      font-size: 14px;
+      text-decoration: underline;
+      margin-bottom: 8px;
+    }
+  }
+
+  .currencyInfoList {
+    margin-left: 10px;
+  }
+
+  .wrapper h2 {
+    padding-top: 90px;
+    margin-bottom: 65px;
+    font-size: 32px;
+  }
+
+  .card {
+    margin-bottom: 8px;
+    list-style: none;
+    height: 75px;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    display: inline-flex;
+    max-width: 100%;
+
+    b {
+      font-weight: bolder;
+      font-size: 13px;
+    }
+
+    li {
+      font-weight: 100;
+      font-size: 11px;
+      @include ff-bold;
+      line-height: 18px;
+      text-align: left;
+    }
+  }
+
+  .thirdCard {
+    padding: 10px;
+    height: auto;
+  }
+
+  .securityIcon {
+    background: var(--color-inactive-border);
+  }
+
+  .error {
+    color: var(--color-f-error);
+    position: relative;
+    bottom: 20px;
+    font-size: 12px;
+  }
+
+  .formBody {
+    margin: 100px 16px;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .mobileFormBody,
+  .formBody {
+    margin: 0px;
+  }
+
+  .card {
+    margin: 7px 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .stepNumber {
+    width: 45px;
+  }
+}

@@ -1,0 +1,40 @@
+.title {
+  font-size: 14px;
+  color: var(--color-notice);
+  position: static;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+
+  .status {
+    padding: 0 6px;
+    display: inline-block;
+    line-height: 1em;
+    vertical-align: middle;
+    font-weight: bold;
+  }
+
+  .status-tooltip {
+    // fix tooltip margin styles
+    position: relative;
+    margin-bottom: -2px;
+  }
+
+  &.online,
+  &.offline {
+    .mark {
+      display: inline-block;
+      width: 0.5em;
+      height: 0.5em;
+      background: var(--color-bad);
+      line-height: 1em;
+      vertical-align: middle;
+      border-radius: 0.5em;
+    }
+  }
+  &.online {
+    .mark {
+      background: var(--color-good);
+    }
+  }
+}

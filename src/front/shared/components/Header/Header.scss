@@ -1,0 +1,85 @@
+.themeSwitcher {
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: var(--color);
+  margin-left: 1rem;
+
+  svg {
+    display: block;
+  }
+}
+
+.rightArea,
+.leftArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header,
+.header-mobile {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: position 0.3s ease;
+}
+
+.flexebleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+@include media-mobile {
+  .widgetHeader {
+    display: unset;
+    width: 100%;
+  }
+}
+
+.logoutWrapper {
+  margin-left: 1em;
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+  color: var(--color-indicating);
+
+  span {
+    margin-left: 0.15em;
+  }
+
+  &:hover {
+   color: var(--color-brand);
+  }
+}
+
+
+.header-promo {
+  background: transparent;
+}
+
+.header-mobile > div {
+  transform: none;
+  z-index: 9999999;
+  transition: transform 250ms ease;
+}
+
+.loaderCreateWallet {
+  display: block;
+  position: fixed;
+  z-index: 9999999999999999;
+  width: 100vw;
+  height: 100vh;
+}
+
+.walletTour {
+  position: absolute;
+}

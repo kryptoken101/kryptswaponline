@@ -1,0 +1,175 @@
+.header {
+  padding: 16px 0;
+}
+
+.headerContent {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  width: 100%;
+  padding: 0 64px;
+  font-size: 20px;
+  line-height: 18px;
+  font-weight: 700;
+  text-align: center;
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  @include media-mobile {
+    .title {
+      font-size: 18px;
+    }
+  }
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  color: var(--color-background-elements);
+  padding: 0.3em 10px;
+  margin-top: -5px;
+  font-size: 13px;
+  background: var(--color-f-error);
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.closeButton {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  transition: opacity .33s $ease-out-quadratic;
+
+  &:hover {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.modal-overlay {
+  position: sticky;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .3);
+  opacity: 1;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background-elements);
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+
+  @include media-mobile {
+    height: 100%;
+    padding: 16px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.button {
+  width: 45%;
+  max-width: 240px;
+}
+
+.content {
+  margin: 32px 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .content-inner {
+      > * + * {
+      margin-top: 2em;
+    }
+  }
+
+}
+
+.notification {
+  font-size: 16px;
+}
+
+.walletToggle {
+  margin-bottom: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 0 20px;
+  &_site {
+    position: relative;
+  }
+}
+
+.walletOpenSide {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  height: 73px;
+  margin-bottom: -10px;
+}
+
+.specify {
+  width: 200px;
+  font-weight: 500;
+  line-height: 21px;
+  font-size: 16px;
+}
+
+.anotherRecepient {
+  position: relative;
+  z-index: -1;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease;
+  &_active {
+    z-index: 0;
+    opacity: 1;
+    max-height: 100vh;
+    transition: opacity 0.3s 0.2s,
+                max-height 0.7s ease;
+  }
+}
+
+.walletInput {
+  margin-top: 10px;
+
+  input {
+    border: none;
+    margin: 0;
+    height: 30px;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+    &:focus {
+      border: none;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  
+  @include media-mobile {
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,17 @@
+.item {
+  font-size: 18px;
+  opacity: 0.6;
+  color: var(--color);
+  margin-right: 45px;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.active {
+  opacity: 1;
+  border-bottom: 2px solid var(--color-brand);
+}

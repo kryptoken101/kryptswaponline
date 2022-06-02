@@ -1,0 +1,52 @@
+.ordersHeading {
+  margin-top: 0;
+}
+
+.offersLoadingNotice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-notice);
+
+  .loader {
+    margin: 0.2em 0;
+  }
+}
+
+.offersOfflineNotice {
+  color: var(--color-notice);
+}
+
+.orderBookTable {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.subtitle {
+  color: var(--color-notice);
+  font-size: 15px;
+  margin-top: -5px;
+}
+
+.showAllSwitch {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 590px) {
+  .orderbookWrapper {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .orderbookWrapper {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .offersLoadingNotice {
+    font-size: 0.9em;
+  }
+}
