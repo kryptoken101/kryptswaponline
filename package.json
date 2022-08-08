@@ -202,7 +202,7 @@
     "@ethersproject/providers": "^5.0.14",
     "@ethersproject/signing-key": "^5.0.8",
     "@pedrouid/iso-crypto": "^1.0.0",
-    "@sentry/react": "^6.3.5",
+    "@sentry/react": "^7.9.0",
     "@sentry/tracing": "^6.3.5",
     "@types/react": "^17.0.0",
     "@types/react-css-modules": "^4.6.2",
