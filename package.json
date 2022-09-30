@@ -136,7 +136,7 @@
     "copy-webpack-plugin": "^10.0.0",
     "core-js": "^3.8.2",
     "css-loader": "^5.0.1",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.3",
     "empty-module": "^0.0.2",
     "eslint": "^8.0.0",
     "eslint-config-airbnb": "^19.0.0",
